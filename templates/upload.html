@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Upload fișiere</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h2>
+    Powered by Fodor Marius
+  </h2>
+<form id="formUpload" method="POST" enctype="multipart/form-data">
+  <input type="file" name="fisier" accept="image/*,video/*,.pdf" multiple>
+  <button type="submit" id="btn">Incarca</button>
+</form>
+<p>{{ mesaj }}</p>
+
+<script>
+  const form = document.getElementById('formUpload');
+  const btn = document.getElementById('btn');
+
+  form.addEventListener('submit', function () {
+    btn.disabled = true;
+    btn.textContent = 'Se incarca...';
+  });
+</script>
+</html>

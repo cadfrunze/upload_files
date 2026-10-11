@@ -1,0 +1,5 @@
+sudo ufw status
+sudo ufw allow 5000/tcp
+
+sudo tailscale funnel 5000
+sudo tailscale funnel reset
