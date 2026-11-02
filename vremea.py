@@ -15,5 +15,6 @@ param: dict[str | str] = {
 }
 
 data: Response = get(URL, params=param)
+data.raise_for_status()
 data: dict = data.json()
 print(f"Description: {data['weather'][0]['description']}, Temperature: {data['main']['temp']}°C")
